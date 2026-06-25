@@ -805,6 +805,23 @@ function Footer() {
     { title: "Explore", links: ["Destinations", "Packages", "Hotels", "Flights"] },
     { title: "Services", links: ["Travel Insurance", "Visa Service", "Airport Transfer", "Guide & Tours"] }
   ];
+  const socials = [
+    {
+      label: "Facebook",
+      text: "F",
+      href: "https://www.facebook.com/hafiz.alfarizi.1804?locale=id_ID"
+    },
+    {
+      label: "Instagram",
+      text: "IG",
+      href: "https://www.instagram.com/ryss_vreta?igsh=dDBxN3VlMDJtdTVw."
+    },
+    {
+      label: "WhatsApp",
+      text: "WA",
+      href: "https://wa.me/6283125726235?text=Halo%20WanderGo,%20saya%20tertarik%20dengan%20paket%20wisata%20yang%20tersedia.%20Mohon%20informasi%20lebih%20lanjut.%20Terima%20kasih."
+    }
+  ];
 
   return (
     <footer className="bg-dark text-white">
@@ -817,13 +834,16 @@ function Footer() {
               and comfort.
             </p>
             <div className="mt-6 flex gap-3">
-              {["f", "ig", "x", "yt"].map((social) => (
+              {socials.map((social) => (
                 <a
-                  key={social}
-                  href="#home"
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
                   className="flex size-10 items-center justify-center rounded-full bg-white/10 text-xs font-extrabold uppercase text-white transition hover:bg-primary"
                 >
-                  {social}
+                  {social.text}
                 </a>
               ))}
             </div>
@@ -847,7 +867,7 @@ function Footer() {
             <div className="mt-5 grid gap-4 text-slate-300">
               <p className="flex items-start gap-3">
                 <Phone className="mt-1 size-5 text-primary" />
-                +62 812 3456 7890
+                +62 831 2572 6235
               </p>
               <p className="flex items-start gap-3">
                 <Mail className="mt-1 size-5 text-primary" />
@@ -855,9 +875,9 @@ function Footer() {
               </p>
               <p className="flex items-start gap-3">
                 <MapPin className="mt-1 size-5 text-primary" />
-                Jl. Sudirman No. 123
+                Jl. Abdullah H.seman, Gabek 1
                 <br />
-                Jakarta, Indonesia
+                PangkalPinang, Indonesia
               </p>
             </div>
           </div>
